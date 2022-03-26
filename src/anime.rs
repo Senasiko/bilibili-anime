@@ -13,12 +13,12 @@ pub struct Anime {
 }
 impl std::fmt::Display for Anime {
   fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-    write!(f, "《{}》 | {} | {}", self.title, self.pub_time, self.url)
+    write!(f, "《{}》 | {} | {} | {}", self.title, self.pub_time, if let Some(index) = &self.pub_index { index.to_string() } else { "".to_string() }, self.url)
   }
 }
 
 impl std::fmt::Debug for Anime {
   fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-    write!(f, "《{}》 | {} | {}", self.title, self.pub_time, self.url)
+    write!(f, "《{}》 | {} | {} | {}", self.title, self.pub_time, if let Some(index) = &self.pub_index { index.to_string() } else { "".to_string() }, self.url)
   }
 }
